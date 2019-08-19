@@ -1,9 +1,7 @@
 package com.example.myapplication;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -39,13 +37,14 @@ public class Fragment1 extends Fragment {
         return inflater.inflate(R.layout.tab1_layout, container, false);
     }
 
+    // Đối với Fragment chỉ có thể gọi hàm findViewByID trong phương thức onActivityCreated() và phải gọi hàm getView()
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         anhXa();
     }
 
-    public void anhXa(){
+    public void anhXa() {
 
         lvHinh = (ListView) getView().findViewById(R.id.listview);
         arrHinh = new ArrayList<>();
