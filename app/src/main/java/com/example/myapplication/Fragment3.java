@@ -67,7 +67,9 @@ public class Fragment3 extends Fragment {
 
     }
 
+    //custom aleardiaglog
     public void createDialogAnime() {
+        //Ép layout xuất hiện dưới dạng Dialog
         LayoutInflater inflater = getLayoutInflater();
         View alertLayout = inflater.inflate(R.layout.dialog_layout, null);
 
@@ -75,8 +77,10 @@ public class Fragment3 extends Fragment {
         final EditText editMota = (EditText) alertLayout.findViewById(R.id.editTextNhapMota);
         final EditText editLink = (EditText) alertLayout.findViewById(R.id.editTextNhapLink);
 
+        //Khai báo AleartDialog
         final AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
         alert.setView(alertLayout);
+        //True thì Diaglog sẽ biến mất nếu nhấn vào vùng ngoài và false là không biến mất
         alert.setCancelable(false);
         alert.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
             @Override

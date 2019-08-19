@@ -123,17 +123,21 @@ public class Fragment1 extends Fragment {
     }
 
     public void goHinhItem() {
+        //Khai báo intent tới HinhItem Activity
         Intent intent = new Intent(getActivity(), HinhItem.class);
+        //Khai báo Bundle
         Bundle bundle = new Bundle();
 
         String imageName = arrHinh.get(vitri).getTen();
         String imageMota = arrHinh.get(vitri).getMota();
         String imageLink = arrHinh.get(vitri).getLink();
 
+        //Truyền dữ liệu vào bundle
         bundle.putString("ten", imageName);
         bundle.putString("mota", imageMota);
         bundle.putString("link", imageLink);
 
+        //Bỏ  bundle vào intent
         intent.putExtra("Data", bundle);
         startActivityForResult(intent, REQUEST_CODE);
     }

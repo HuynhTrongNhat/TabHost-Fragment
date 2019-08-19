@@ -36,6 +36,8 @@ public class Fragment2 extends Fragment {
 
         //Khai báo calendar cho tab Ngày giờ
         Calendar calendar = Calendar.getInstance();
+
+        //Sửa dụng lớp SimpleDateFormat để chỉnh sửa định dạng ngày giờ
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
 
