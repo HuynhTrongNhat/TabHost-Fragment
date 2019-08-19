@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
         ImageView icon3 = (ImageView) tabview3.findViewById(R.id.tabsIcon);
         TabHost.TabSpec tab3 = tab.newTabSpec("Anime").setIndicator(tabview3).setContent(new FakeContentTab(this));
         tab.addTab(tab3);
-
         tab.setCurrentTab(0);
     }
 
