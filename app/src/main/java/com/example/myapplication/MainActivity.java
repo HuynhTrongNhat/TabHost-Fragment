@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -34,13 +35,10 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
 
         tab.setOnTabChangedListener(this);
         viewPager.setOnPageChangeListener(this);
-
-
     }
 
-    public void tabInit(){
+    public void tabInit() {
         tab = (TabHost) findViewById(R.id.tabHost);
-
         tab.setup();
 
         View tabview1 = LayoutInflater.from(tab.getContext()).inflate(R.layout.tabs_bg, null);
@@ -64,11 +62,11 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
     }
 
     @Override
-    public void onTabChanged(String s) {
+    public void onTabChanged(String tabID) {
         int vitritab = tab.getCurrentTab();
         viewPager.setCurrentItem(vitritab);
-        Toast.makeText(getApplicationContext(), "Đã chuyển sang " + s, Toast.LENGTH_LONG).show();
-        if(s == "Ngày giờ"){
+        Toast.makeText(getApplicationContext(), "Đã chuyển sang " + tabID, Toast.LENGTH_LONG).show();
+        if (tabID == "Ngày giờ") {
             TextView txtTime = (TextView) findViewById(R.id.txtTime);
             TextView txtDate = (TextView) findViewById(R.id.txtDate);
 
@@ -84,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
     }
 
     @Override
@@ -94,14 +91,13 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
 
     @Override
     public void onPageScrollStateChanged(int state) {
-
     }
 
     public class FakeContentTab implements TabHost.TabContentFactory {
 
         Context context;
 
-        public FakeContentTab(Context context){
+        public FakeContentTab(Context context) {
             this.context = context;
         }
 
@@ -113,6 +109,4 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
             return view;
         }
     }
-
-
 }
